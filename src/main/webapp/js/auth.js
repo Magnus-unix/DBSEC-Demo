@@ -1,13 +1,9 @@
 // 处理登录
 async function handleLogin() {
-    const form = document.getElementById('login-form');
-    const formData = new FormData(form);
-    
     const loginData = {
-        username: formData.get('login-username'),
-        password: formData.get('login-password')
-    };
-    
+            username: document.getElementById('login-username').value,
+            password: document.getElementById('login-password').value
+        };
     try {
         const response = await fetch('UserServlet?action=login', {
             method: 'POST',
